@@ -2,73 +2,19 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnCount="4"
+    android:columnCount="6"
     android:orientation="horizontal"
     android:background="@drawable/coffee">
     <TextView
         android:id="@+id/expression"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        android:layout_columnSpan="4" />
+        android:layout_columnSpan="6" />
     <TextView
         android:id="@+id/result"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        android:layout_columnSpan="3" />
-    <Button
-        android:id="@+id/button_clear"
-        android:text="@string/button_clear"
-        style="@style/action_button"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1" />
-    <Button
-        android:id="@+id/button_del"
-        android:text="@string/button_del"
-        style="@style/action_button"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1" />
-    <Button
-        android:id="@+id/button_lBracket"
-        android:text="@string/button_lBracket"
-        android:layout_columnWeight="1"
-        style="@style/action_button"
-        android:layout_rowWeight="1" />
-    <Button
-        android:id="@+id/button_rBracket"
-        android:text="@string/button_rBracket"
-        style="@style/action_button"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1" />
-    <Button
-        android:id="@+id/button_div"
-        android:text="@string/button_div"
-        style="@style/action_button"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1" />
-    <Button
-        android:id="@+id/button_percent"
-        android:text="@string/button_percent"
-        style="@style/action_button"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1" />
-    <Button
-        android:id="@+id/button_sqr"
-        android:text="@string/button_sqr"
-        style="@style/action_button"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1" />
-    <Button
-        android:id="@+id/button_cube"
-        android:text="@string/button_cube"
-        style="@style/action_button"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1" />
-    <Button
-        android:id="@+id/button_multiply"
-        android:text="@string/button_multiply"
-        style="@style/action_button"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1" />
+        android:layout_columnSpan="6" />
     <Button
         android:id="@+id/button_1"
         android:text="@string/button_1"
@@ -88,15 +34,21 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
     <Button
-        android:id="@+id/button_minus"
-        android:text="@string/button_minus"
+        android:id="@+id/button_4"
+        android:text="@string/button_4"
+        style="@style/num_button"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <Button
+        android:id="@+id/button_sqr"
+        android:text="@string/button_sqr"
         style="@style/action_button"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
     <Button
-        android:id="@+id/button_4"
-        android:text="@string/button_4"
-        style="@style/num_button"
+        android:id="@+id/button_cube"
+        android:text="@string/button_cube"
+        style="@style/action_button"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
     <Button
@@ -112,13 +64,6 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"/>
     <Button
-        android:id="@+id/button_plus"
-        android:text="@string/button_plus"
-        style="@style/action_button"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_rowSpan="2" />
-    <Button
         android:id="@+id/button_7"
         android:text="@string/button_7"
         style="@style/num_button"
@@ -131,9 +76,15 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
     <Button
-        android:id="@+id/button_9"
-        android:text="@string/button_9"
-        style="@style/num_button"
+        android:id="@+id/button_div"
+        android:text="@string/button_div"
+        style="@style/action_button"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <Button
+        android:id="@+id/button_multiply"
+        android:text="@string/button_multiply"
+        style="@style/action_button"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
     <Button
@@ -143,9 +94,57 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
     <Button
+        android:id="@+id/button_9"
+        android:text="@string/button_9"
+        style="@style/num_button"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <Button
         android:id="@+id/button_0"
         android:text="@string/button_0"
         style="@style/num_button"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <Button
+        android:id="@+id/button_percent"
+        android:text="@string/button_percent"
+        style="@style/action_button"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <Button
+        android:id="@+id/button_minus"
+        android:text="@string/button_minus"
+        style="@style/action_button"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <Button
+        android:id="@+id/button_plus"
+        android:text="@string/button_plus"
+        style="@style/action_button"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <Button
+        android:id="@+id/button_clear"
+        android:text="@string/button_clear"
+        style="@style/action_button"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <Button
+        android:id="@+id/button_lBracket"
+        android:text="@string/button_lBracket"
+        android:layout_columnWeight="1"
+        style="@style/action_button"
+        android:layout_rowWeight="1" />
+    <Button
+        android:id="@+id/button_rBracket"
+        android:text="@string/button_rBracket"
+        style="@style/action_button"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <Button
+        android:id="@+id/button_del"
+        android:text="@string/button_del"
+        style="@style/action_button"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
     <Button
