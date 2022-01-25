@@ -75,6 +75,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button8.setOnClickListener(this);
         button9.setOnClickListener(this);
         button0.setOnClickListener(this);
+        buttonMultiply.setOnClickListener(this);
+        buttonClear.setOnClickListener(this);
+        buttonDel.setOnClickListener(this);
+        buttonDiv.setOnClickListener(this);
+        buttonDot.setOnClickListener(this);
+        buttonMinus.setOnClickListener(this);
+        buttonPlus.setOnClickListener(this);
+        buttonLBracket.setOnClickListener(this);
+        buttonRBracket.setOnClickListener(this);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        String buffer = expression.getText().toString();
     switch (v.getId())
     {
         case R.id.button_1:
@@ -133,9 +143,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         case R.id.button_0:
             expression.append("0");
             break;
-
-
-
+        case R.id.button_plus:
+            expression.append("+");
+            break;
+        case R.id.button_minus:
+            expression.append("-");
+            break;
+        case R.id.button_div:
+            expression.append("/");
+            break;
+        case R.id.button_multiply:
+            expression.append("*");
+            break;
+        case R.id.button_lBracket:
+            expression.append("(");
+            break;
+        case R.id.button_rBracket:
+            expression.append(")");
+            break;
+        case R.id.button_dot:
+            expression.append(".");
+            break;
+        case R.id.button_clear:
+            expression.setText("");
+            result.setText("");
+            break;
+        case R.id.button_del:
+            if(buffer.length()>0) {
+            buffer = buffer.substring(0, buffer.length() - 1);
+            expression.setText(buffer);
+        }
+        break;
 
     }
     }
