@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="num_button">
+    <style name="NumButton">
         <item name="android:layout_marginLeft">2dp</item>
         <item name="android:layout_marginRight">2dp</item>
         <item name="android:layout_marginBottom">1dp</item>
@@ -10,7 +10,7 @@
         <item name="backgroundTint">#7E7777</item>
 
     </style>
-    <style name="action_button">
+    <style name="ActionButton">
         <item name="android:layout_marginLeft">2dp</item>
         <item name="android:layout_marginRight">2dp</item>
         <item name="android:layout_marginBottom">1dp</item>
