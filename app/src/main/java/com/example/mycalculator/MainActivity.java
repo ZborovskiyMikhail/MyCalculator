@@ -1,5 +1,6 @@
 package com.example.mycalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -82,6 +83,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initElements();
         setButtonClickers();
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("SAVE_EXPRESSION", expression.getText().toString());
+        outState.putString("SAVE_RESULT",result.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        expression.setText(savedInstanceState.getString("SAVE_EXPRESSION"));
+        result.setText(savedInstanceState.getString("SAVE_RESULT"));
     }
 
     @Override
