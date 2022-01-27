@@ -84,6 +84,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPlus.setOnClickListener(this);
         buttonLBracket.setOnClickListener(this);
         buttonRBracket.setOnClickListener(this);
+        button1Sqr.setOnClickListener(this);
+        buttonCube.setOnClickListener(this);
+        buttonEqual.setOnClickListener(this);
+        buttonPercent.setOnClickListener(this);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,7 +178,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             expression.setText(buffer);
         }
         break;
-
+        case R.id.button_equal:
+            buffer = buffer.replaceAll("÷","/");
+            buffer = buffer.replaceAll("×","*");
+            Expression exp = new Expression(buffer);
+            String res = String.valueOf(exp.calculate());
+            result.setText(res);
+            break;
+        case R.id.button_sqr:
+            buffer = buffer.replaceAll("÷","/");
+            buffer = buffer.replaceAll("×","*");
+            Expression exp1 = new Expression("("+buffer+")^2");
+            String res1 = String.valueOf(exp1.calculate());
+            result.setText(res1);
+            break;
+        case R.id.button_cube:
+            buffer = buffer.replaceAll("÷","/");
+            buffer = buffer.replaceAll("×","*");
+            Expression exp2 = new Expression("("+buffer+")^3");
+            String res2 = String.valueOf(exp2.calculate());
+            result.setText(res2);
+            break;
+        case R.id.button_percent:
+            buffer = buffer.replaceAll("÷","/");
+            buffer = buffer.replaceAll("×","*");
+            Expression exp3 = new Expression(buffer);
+            String res3 = String.valueOf(exp3.calculate()/100);
+            result.setText(res3);
     }
     }
 }
