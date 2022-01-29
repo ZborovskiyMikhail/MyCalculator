@@ -108,8 +108,8 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_percent"
-        android:text="@string/button_percent"
+        android:id="@+id/button_clear"
+        android:text="@string/button_clear"
         style="@style/ActionButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
@@ -126,8 +126,8 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_clear"
-        android:text="@string/button_clear"
+        android:id="@+id/button_themechange"
+        android:text="@string/button_changetheme"
         style="@style/ActionButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />

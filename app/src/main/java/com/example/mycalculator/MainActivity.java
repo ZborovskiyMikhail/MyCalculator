@@ -3,6 +3,8 @@ package com.example.mycalculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import org.mariuszgromada.math.mxparser.*;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonEqual;
     private Button button1Sqr;
     private Button buttonCube;
-    private Button buttonPercent;
+    private Button buttonTheme;
     private Button buttonDot;
     private Button buttonLBracket;
     private Button buttonRBracket;
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonEqual = findViewById(R.id.button_equal);
         button1Sqr = findViewById(R.id.button_sqr);
         buttonCube = findViewById(R.id.button_cube);
-        buttonPercent = findViewById(R.id.button_percent);
+        buttonTheme = findViewById(R.id.button_themechange);
         buttonDot = findViewById(R.id.button_dot);
         buttonLBracket = findViewById(R.id.button_lBracket);
         buttonRBracket = findViewById(R.id.button_rBracket);
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button1Sqr.setOnClickListener(this);
         buttonCube.setOnClickListener(this);
         buttonEqual.setOnClickListener(this);
-        buttonPercent.setOnClickListener(this);
+        buttonTheme.setOnClickListener(this);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,12 +201,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String res2 = String.valueOf(exp2.calculate());
                 result.setText(res2);
                 break;
-            case R.id.button_percent:
-                buffer = buffer.replaceAll("÷","/");
-                buffer = buffer.replaceAll("×","*");
-                Expression exp3 = new Expression(buffer);
-                String res3 = String.valueOf(exp3.calculate()/100);
-                result.setText(res3);
+            case R.id.button_themechange:
+                Intent intent = new Intent(MainActivity.this,ChangeStyle.class);
+                startActivity(intent);
         }
     }
 }

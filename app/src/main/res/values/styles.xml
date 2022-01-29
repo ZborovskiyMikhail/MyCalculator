@@ -8,15 +8,10 @@
         <item name="android:textSize">@dimen/button_textSize</item>
         <item name="android:textColor">@color/black</item>
         <item name="backgroundTint">@color/num_button</item>
+        <item name="cornerRadius">@dimen/round_button</item>
     </style>
 
-    <style name="ActionButton">
-        <item name="android:layout_marginLeft">@dimen/horizontal_margin</item>
-        <item name="android:layout_marginRight">@dimen/horizontal_margin</item>
-        <item name="android:layout_marginBottom">@dimen/vertical_margin</item>
-        <item name="android:layout_marginTop">@dimen/vertical_margin</item>
-        <item name="android:textSize">@dimen/button_textSize</item>
-        <item name="android:textColor">@color/black</item>
+    <style name="ActionButton" parent="NumButton">
         <item name="backgroundTint">@color/action_button</item>
     </style>
 
