@@ -10,8 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
+    private CalculatorModel calculator = new CalculatorModel();
     private Button button1;
     private Button button2;
     private Button button3;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonDel;
     private TextView expression;
     private TextView result;
+
 
     public void initElements() {
         button1 = findViewById(R.id.button_1);
@@ -66,30 +68,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         result = findViewById(R.id.result);
 
     }
+
     public void setButtonClickers(){
-        button1.setOnClickListener(this);
-        button2.setOnClickListener(this);
-        button3.setOnClickListener(this);
-        button4.setOnClickListener(this);
-        button5.setOnClickListener(this);
-        button6.setOnClickListener(this);
-        button7.setOnClickListener(this);
-        button8.setOnClickListener(this);
-        button9.setOnClickListener(this);
-        button0.setOnClickListener(this);
-        buttonMultiply.setOnClickListener(this);
-        buttonClear.setOnClickListener(this);
-        buttonDel.setOnClickListener(this);
-        buttonDiv.setOnClickListener(this);
-        buttonDot.setOnClickListener(this);
-        buttonMinus.setOnClickListener(this);
-        buttonPlus.setOnClickListener(this);
-        buttonLBracket.setOnClickListener(this);
-        buttonRBracket.setOnClickListener(this);
-        button1Sqr.setOnClickListener(this);
-        buttonCube.setOnClickListener(this);
-        buttonEqual.setOnClickListener(this);
-        buttonTheme.setOnClickListener(this);
+        button1.setOnClickListener(buttonCalcClick);
+        button2.setOnClickListener(buttonCalcClick);
+        button3.setOnClickListener(buttonCalcClick);
+        button4.setOnClickListener(buttonCalcClick);
+        button5.setOnClickListener(buttonCalcClick);
+        button6.setOnClickListener(buttonCalcClick);
+        button7.setOnClickListener(buttonCalcClick);
+        button8.setOnClickListener(buttonCalcClick);
+        button9.setOnClickListener(buttonCalcClick);
+        button0.setOnClickListener(buttonCalcClick);
+        buttonMultiply.setOnClickListener(buttonCalcClick);
+        buttonClear.setOnClickListener(buttonCalcClick);
+        buttonDel.setOnClickListener(buttonCalcClick);
+        buttonDiv.setOnClickListener(buttonCalcClick);
+        buttonDot.setOnClickListener(buttonCalcClick);
+        buttonMinus.setOnClickListener(buttonCalcClick);
+        buttonPlus.setOnClickListener(buttonCalcClick);
+        buttonLBracket.setOnClickListener(buttonCalcClick);
+        buttonRBracket.setOnClickListener(buttonCalcClick);
+        button1Sqr.setOnClickListener(buttonCalcClick);
+        buttonCube.setOnClickListener(buttonCalcClick);
+        buttonEqual.setOnClickListener(buttonCalcClick);
+        buttonTheme.setOnClickListener(changeTheme);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         initElements();
         setButtonClickers();
-
     }
 
     @Override
@@ -114,96 +116,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         result.setText(savedInstanceState.getString("SAVE_RESULT"));
     }
 
-    @Override
-    public void onClick(View v) {
-        String buffer = expression.getText().toString();
-        switch (v.getId())
-        {
-            case R.id.button_1:
-                expression.append("1");
-                break;
-            case R.id.button_2:
-                expression.append("2");
-                break;
-            case R.id.button_3:
-                expression.append("3");
-                break;
-            case R.id.button_4:
-                expression.append("4");
-                break;
-            case R.id.button_5:
-                expression.append("5");
-                break;
-            case R.id.button_6:
-                expression.append("6");
-                break;
-            case R.id.button_7:
-                expression.append("7");
-                break;
-            case R.id.button_8:
-                expression.append("8");
-                break;
-            case R.id.button_9:
-                expression.append("9");
-                break;
-            case R.id.button_0:
-                expression.append("0");
-                break;
-            case R.id.button_plus:
-                expression.append("+");
-                break;
-            case R.id.button_minus:
-                expression.append("-");
-                break;
-            case R.id.button_div:
-                expression.append("/");
-                break;
-            case R.id.button_multiply:
-                expression.append("*");
-                break;
-            case R.id.button_lBracket:
-                expression.append("(");
-                break;
-            case R.id.button_rBracket:
-                expression.append(")");
-                break;
-            case R.id.button_dot:
-                expression.append(".");
-                break;
-            case R.id.button_clear:
-                expression.setText("");
-                result.setText("");
-                break;
-            case R.id.button_del:
-                if(buffer.length()>0) {
-                buffer = buffer.substring(0, buffer.length() - 1);
-                expression.setText(buffer);
-                }
-                break;
-            case R.id.button_equal:
-                buffer = buffer.replaceAll("÷","/");
-                buffer = buffer.replaceAll("×","*");
-                Expression exp = new Expression(buffer);
-                String res = String.valueOf(exp.calculate());
-                result.setText(res);
-                break;
-            case R.id.button_sqr:
-                buffer = buffer.replaceAll("÷","/");
-                buffer = buffer.replaceAll("×","*");
-                Expression exp1 = new Expression("("+buffer+")^2");
-                String res1 = String.valueOf(exp1.calculate());
-                result.setText(res1);
-                break;
-            case R.id.button_cube:
-                buffer = buffer.replaceAll("÷","/");
-                buffer = buffer.replaceAll("×","*");
-                Expression exp2 = new Expression("("+buffer+")^3");
-                String res2 = String.valueOf(exp2.calculate());
-                result.setText(res2);
-                break;
-            case R.id.button_themechange:
-                Intent intent = new Intent(MainActivity.this,ChangeStyle.class);
-                startActivity(intent);
+    View.OnClickListener buttonCalcClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            calculator.buttonPressed(v.getId());
+            expression.setText(calculator.getExpression());
+            result.setText(calculator.getResult());
+
         }
-    }
+    };
+    View.OnClickListener changeTheme = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this,ChangeStyle.class);
+            startActivity(intent);
+        }
+    };
+
 }
