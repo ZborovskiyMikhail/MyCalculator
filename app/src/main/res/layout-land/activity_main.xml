@@ -17,142 +17,165 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:layout_columnSpan="6" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_1"
         android:text="@string/button_1"
-        style="@style/NumButton"
+        android:backgroundTint="?attr/numButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_2"
         android:text="@string/button_2"
-        style="@style/NumButton"
+        android:backgroundTint="?attr/numButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_3"
         android:text="@string/button_3"
-        style="@style/NumButton"
+        android:backgroundTint="?attr/numButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_4"
         android:text="@string/button_4"
-        style="@style/NumButton"
+        android:backgroundTint="?attr/numButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_sqr"
         android:text="@string/button_sqr"
-        style="@style/ActionButton"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_cube"
         android:text="@string/button_cube"
-        style="@style/ActionButton"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_5"
         android:text="@string/button_5"
-        style="@style/NumButton"
+        android:backgroundTint="?attr/numButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_6"
         android:text="@string/button_6"
-        style="@style/NumButton"
+        android:backgroundTint="?attr/numButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_7"
         android:text="@string/button_7"
-        style="@style/NumButton"
+        android:backgroundTint="?attr/numButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_8"
         android:text="@string/button_8"
-        style="@style/NumButton"
+        android:backgroundTint="?attr/numButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_div"
         android:text="@string/button_div"
-        style="@style/ActionButton"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_multiply"
         android:text="@string/button_multiply"
-        style="@style/ActionButton"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_dot"
         android:text="@string/button_dot"
-        style="@style/ActionButton"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_9"
         android:text="@string/button_9"
-        style="@style/NumButton"
+        android:backgroundTint="?attr/numButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_0"
         android:text="@string/button_0"
-        style="@style/NumButton"
+        android:backgroundTint="?attr/numButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
-        android:id="@+id/button_percent"
-        android:text="@string/button_percent"
-        style="@style/ActionButton"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1" />
-    <Button
-        android:id="@+id/button_minus"
-        android:text="@string/button_minus"
-        style="@style/ActionButton"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1" />
-    <Button
-        android:id="@+id/button_plus"
-        android:text="@string/button_plus"
-        style="@style/ActionButton"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_clear"
         android:text="@string/button_clear"
-        style="@style/ActionButton"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_minus"
+        android:text="@string/button_minus"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_plus"
+        android:text="@string/button_plus"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_themechange"
+        android:text="@string/button_changetheme"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1" />
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_lBracket"
         android:text="@string/button_lBracket"
+        android:backgroundTint="?attr/actionButtonBackground"
         android:layout_columnWeight="1"
-        style="@style/ActionButton"
+        style="@style/MyButton"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_rBracket"
         android:text="@string/button_rBracket"
-        style="@style/ActionButton"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_del"
         android:text="@string/button_del"
-        style="@style/ActionButton"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_equal"
         android:text="@string/button_equal"
-        style="@style/ActionButton"
+        android:backgroundTint="?attr/actionButtonBackground"
+        style="@style/MyButton"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:layout_columnSpan="2" />

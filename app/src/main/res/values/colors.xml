@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="num_button">#7E7777</color>
+    <color name="action_button">#FF9800</color>
+    <color name="num_button_light">#E3DFDF</color>
+    <color name="num_button_dark">#454242</color>
+    <color name="action_button_light">#F3CC94</color>
+    <color name="action_button_dark">#D17E04</color>
+    <color name="grey_light">#E1DCDC</color>
+    <color name="grey_middle">#918C8C</color>
+    <color name="grey_dark">#474141</color>
+
 </resources>

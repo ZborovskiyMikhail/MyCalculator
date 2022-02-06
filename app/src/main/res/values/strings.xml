@@ -5,7 +5,7 @@
     <string name="button_lBracket">(</string>
     <string name="button_rBracket">)</string>
     <string name="button_div">/</string>
-    <string name="button_percent">%</string>
+    <string name="button_changetheme">theme</string>
     <string name="button_sqr">x^2</string>
     <string name="button_cube">x^3</string>
     <string name="button_multiply">*</string>
