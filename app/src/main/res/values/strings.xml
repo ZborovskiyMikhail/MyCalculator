@@ -23,4 +23,6 @@
     <string name="button_dot">.</string>
     <string name="button_0">0</string>
     <string name="button_equal">=</string>
+    <string name="light_theme">Light theme</string>
+    <string name="dark_theme">Dark theme</string>
 </resources>

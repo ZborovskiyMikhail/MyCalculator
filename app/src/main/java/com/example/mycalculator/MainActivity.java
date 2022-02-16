@@ -1,7 +1,13 @@
 package com.example.mycalculator;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -38,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
             R.id.result
     };
 
-    private Button buttonTheme;
     private TextView expression;
     private TextView result;
 
 
+
+
   public void initElements() {
 
-        buttonTheme = findViewById(R.id.button_themechange);
         expression = findViewById(R.id.expression);
         result = findViewById(R.id.result);
 
@@ -56,14 +62,43 @@ public class MainActivity extends AppCompatActivity {
         for (int i = buttonId.length - 1; i >= 0; i--){
             findViewById(buttonId[i]).setOnClickListener(buttonCalcClick);
         }
-        buttonTheme.setOnClickListener(changeTheme);
     }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initElements();
         setButtonClickers();
+
+        ThemeStorage storage = new ThemeStorage(this);
+
+        ActivityResultLauncher<Intent> settingsLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Theme theme = (Theme) result.getData().getSerializableExtra(ChangeStyle.THEME_RESULT);
+                    storage.saveTheme(theme);
+                    recreate();
+                }
+
+            }
+        });
+
+        setTheme(storage.getTheme().getStyle());
+
+        setContentView(R.layout.activity_main);
+
+        findViewById(R.id.button_themechange).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                settingsLauncher.launch(ChangeStyle.intent(MainActivity.this, storage.getTheme()));
+            }
+        });
+
+
     }
 
     @Override
@@ -90,9 +125,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
-    View.OnClickListener changeTheme = v -> {
-        Intent intent = new Intent(MainActivity.this,ChangeStyle.class);
-        startActivity(intent);
-    };
+
 
 }
